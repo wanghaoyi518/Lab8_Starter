@@ -1,20 +1,21 @@
 // unit.test.js
-
 const functions = require('../code-to-unit-test/unit-test-me.js');
+//import functions from '../code-to-unit-test/unit-test-me.js';
 
 // TODO - Part 2
 test('Phone number is', () => {
-    expect(isPhoneNumber(12345)).toBe(12345);
+    const data = functions.isPhoneNumber("111-222-3333");
+    expect(data).toBe(true);
 });
 
 test('Email is', () => {
-    expect(isEmail(qwert)).toBe("qwert");
+    expect(functions.isEmail("abc@ucsd.edu")).toBe(true);
 });
 
 test('Strong Password is', () => {
-    expect(isStrongPassword(123)).toBe(0);
+    expect(functions.isStrongPassword(123)).toBe(false);
 });
 
 test('Date is', () => {
-    expect(isDate(1.1)).toBe(0.0);
+    expect(functions.isDate(1/1/2001)).toBe(false);
 });
